@@ -4,6 +4,7 @@ const createError = require('http-errors');
 const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const indexRouter = require('./routes/index');
 const tablespacesRouter = require('./routes/tablespaces');
@@ -18,6 +19,7 @@ const app = express();
 app.use(logger('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(cors());
 
 app.use('/', indexRouter);
 app.use('/api/tablespaces', tablespacesRouter);
