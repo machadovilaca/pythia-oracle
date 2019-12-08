@@ -1,5 +1,7 @@
 const Sessions = module.exports;
 
+const connectOracle = require('../db');
+
 Sessions.index = () => {
-  return {};
+  return connectOracle.exec('SELECT* FROM V$SESSION');
 };

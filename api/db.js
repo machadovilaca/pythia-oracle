@@ -13,6 +13,7 @@ const config = {
 };
 
 DB.exec = async query => {
+  console.log(config);
   const connection = await oracledb.getConnection(config);
 
   return connection.execute(query);
