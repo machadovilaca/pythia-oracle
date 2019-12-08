@@ -12,7 +12,7 @@ const config = {
   user: process.env.DB_USER
 };
 
-DB.exec = async query => {
+DB.exec = async (query) => {
   const connection = await oracledb.getConnection(config);
 
   return connection.execute(query);

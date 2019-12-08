@@ -1,7 +1,11 @@
 const CPU = module.exports;
 
-const connectOracle = require('../db');
+const GenericController = require('./genericController');
 
 CPU.index = () => {
-  return connectOracle.exec('SELECT * FROM V$OSSTAT');
+  return GenericController.index('V$OSSTAT');
+};
+
+CPU.filtered = (unit, quantity) => {
+  return GenericController.filtered(`cpu_${unit}`, quantity * 23);
 };

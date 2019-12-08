@@ -1,7 +1,11 @@
 const Memory = module.exports;
 
-const connectOracle = require('../db')
+const GenericController = require('./genericController');
 
 Memory.index = () => {
-  return connectOracle.exec('SELECT * FROM V$SGA');
+  return GenericController.index('memory_state');
+};
+
+Memory.filtered = (unit, quantity) => {
+  return GenericController.filtered(`memory_${unit}`, quantity);
 };

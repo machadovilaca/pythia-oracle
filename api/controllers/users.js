@@ -1,7 +1,7 @@
 const Users = module.exports;
 
-const connectOracle = require('../db');
+const GenericController = require('./genericController');
 
 Users.index = () => {
-  return connectOracle.exec('SELECT * FROM DBA_USERS');
+  return GenericController.index('DBA_USERS');
 };
