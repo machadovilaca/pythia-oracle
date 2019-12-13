@@ -14,8 +14,8 @@ Tablespaces.filtered = async (unit, quantity) => {
   }
 
   const dates = dateBuilder(await GenericController.raw(
-    `select distinct(TO_CHAR(query_date, 'YYYY/MM/DD HH24:MI')) "date"
-     from tablespaces_history
+    `select distinct(query_date) "date"
+     from tablespaces_${unit}
      order by query_date desc
      fetch next ${quantity} row only`
   ));

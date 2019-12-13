@@ -14,8 +14,8 @@ Datafiles.filtered = async (unit, quantity) => {
   }
 
   const dates = dateBuilder(await GenericController.raw(
-    `select distinct(TO_CHAR(query_date, 'YYYY/MM/DD HH24:MI')) "date"
-     from datafiles_history
+    `select distinct(query_date) "date"
+     from datafiles_${unit}
      order by query_date desc
      fetch next ${quantity} row only`
   ));
