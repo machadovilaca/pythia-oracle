@@ -25,7 +25,7 @@ create table datafiles_history (
 
 -- Tablespaces
 create table tablespaces_history (
-  tablespace_name varchar2(50),
+  tablespace_name varchar2(150),
   block_size number,
   initial_extent number,
   next_extent number,
@@ -35,4 +35,21 @@ create table tablespaces_history (
   status varchar2(50),
   contents varchar2(50),
   query_date TIMESTAMP
+);
+
+-- Users
+create table users (
+  username varchar2(150),
+  user_id number,
+  account_status varchar2(45),
+  default_tablespace varchar2(150)
+);
+
+-- Sessions
+create table sessions (
+  sid number,
+  username varchar2(150),
+  status varchar2(45),
+  program varchar2(45),
+  "type" varchar2(45)
 );

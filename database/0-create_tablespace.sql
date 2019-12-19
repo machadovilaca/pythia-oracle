@@ -1,5 +1,4 @@
-create tablespace pythia_oracle_tables
-datafile
+create tablespace pythia_oracle_tables datafile
 '\u01\app\oracle\oradata\orcl12\orcl\pythia_oracle_01.dbf'
 size 100M;
 
