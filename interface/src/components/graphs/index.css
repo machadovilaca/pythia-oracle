@@ -1,0 +1,33 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+/* --------------------CSS----------------- */
+
+.box {
+    background: linear-gradient(#526494, #604484);
+    height: 100%;
+}
+
+.box__body {
+    padding: 10px 25px;
+}
+
+.stats {
+    color: #fff;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.stats__amount {
+    font-size: 42px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.stats__caption {
+    font-size: 18px;
+
+}
+
+.stats__amount {
+    font-size: 54px;
+}

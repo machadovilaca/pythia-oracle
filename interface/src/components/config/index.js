@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {BrowserRouter as Router, Switch, Route, useRouteMatch} from "react-router-dom";
 import Cpu from "./cpu";
 import Memory from "./memory";

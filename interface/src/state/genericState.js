@@ -7,40 +7,11 @@ const host = process.env.REACT_APP_API_HOST;
 // unit     : type of data aggregation (p.e. 'daily', 'hourly', ...)
 // quantity : amount of data to fetch (p.e. '10', '100', '3123123', ... data points)
 
-export const getData = (resource, unit, quantity) => {
-  const key = createKey();
-  const value = localStorage.getItem(key);
-
-  if (value === null) {
-    updateData(resource, unit, quantity);
-    return localStorage.getItem(key);
-  }
-
-  return value;
-};
-
-export const updateData = (resource, unit, quantity) => {
+export const getData = async (resource, unit, quantity) => {
   const url = createUrl(resource, unit, quantity);
 
-  axios.get(url)
-    .then(response => {
-      localStorage.setItem(
-        createKey(resource, unit, quantity),
-        JSON.stringify(response.data.rows)
-      );
-    })
-    .catch(err => console.log(err));
+  return await axios.get(url);
 };
-
-function createKey(resource, unit, quantity) {
-  let key = `pythia-oracle-${resource}`;
-
-  if (unit !== undefined) {
-    key += `-${unit}-${quantity}`;
-  }
-
-  return key;
-}
 
 function createUrl(resource, unit, quantity) {
   let key = `${host}/${resource}`;

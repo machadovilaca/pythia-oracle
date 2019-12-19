@@ -1,12 +1,31 @@
-.navbar {
-    font-size: 25px;
-    margin-bottom: 20px;
+.navbar-style {
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
-.nav-item {
+.nav-item-style {
     margin-left: 30px;
 }
 
-.dropdown-item {
-    font-size: 20px;
+.dropdown-item-style {
+    font-size: 10px;
+}
+
+.icon-padding {
+    margin-top: 10px;
+}
+
+.text {
+    color: rgba(153, 156, 159, 3);
+    margin-top: 3px;
+    margin-left: 20px;
+}
+
+.root {
+    width: 300px;
+    padding-left: 20px;
+}
+
+.slider {
+
 }
